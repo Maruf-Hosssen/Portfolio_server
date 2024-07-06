@@ -11,4 +11,10 @@ router.post(
   projectContollers.createProject,
 );
 
+router.get(
+  '/project',
+
+  projectContollers.getProject,
+);
+
 export const projectRouter = router;

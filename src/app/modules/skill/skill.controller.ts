@@ -12,6 +12,16 @@ const createskill = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getskill = catchAsync(async (req: Request, res: Response) => {
+  const result = await skillServices.getskill();
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: 'Skill get successfully',
+    data: result,
+  });
+});
 export const skillContollers = {
   createskill,
+  getskill,
 };

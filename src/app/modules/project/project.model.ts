@@ -7,6 +7,8 @@ const projectSchema = new Schema<TProject>({
   technologies: { type: [String], required: true },
   img: { type: String, required: true },
   link: { type: String, required: true },
+  githubClient: { type: String, required: true },
+  githubServer: { type: String, required: true },
   features: { type: String, required: true },
 });
 

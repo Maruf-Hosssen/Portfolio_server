@@ -10,5 +10,10 @@ router.post(
   validateRequest(skillValidations.skillValidationSchema),
   skillContollers.createskill,
 );
+router.get(
+  '/skill',
+
+  skillContollers.getskill,
+);
 
 export const skillRouter = router;

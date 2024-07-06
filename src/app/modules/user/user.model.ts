@@ -22,8 +22,8 @@ userSchema.pre('save', async function (next) {
 });
 
 //statics
-userSchema.statics.isUserExistsByName = async function (username: string) {
-  return await User.findOne({ username }).select('+password');
+userSchema.statics.isUserExistsByName = async function (email: string) {
+  return await User.findOne({ email }).select('+password');
 };
 
 //password matching

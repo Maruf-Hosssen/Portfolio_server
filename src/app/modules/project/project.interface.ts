@@ -4,5 +4,7 @@ export type TProject = {
   technologies: string[];
   img: string;
   link: string;
+  githubClient: string;
+  githubServer: string;
   features: string;
 };

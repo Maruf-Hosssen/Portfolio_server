@@ -10,5 +10,10 @@ router.post(
   validateRequest(experienceValidations.experienceValidationSchema),
   experienceContollers.createExperience,
 );
+router.get(
+  '/experience',
+
+  experienceContollers.getExperience,
+);
 
 export const experienceRouter = router;

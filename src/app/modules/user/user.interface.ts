@@ -11,7 +11,7 @@ export type IUser = {
 
 export interface UserModel extends Model<IUser> {
   //instance methods for checking if the user exist
-  isUserExistsByName(username: string): Promise<IUser>;
+  isUserExistsByName(email: string): Promise<IUser>;
   //instance methods for checking if passwords are matched
   isPasswordMatched(
     plainTextPassword: string,

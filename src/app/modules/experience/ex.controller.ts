@@ -12,6 +12,16 @@ const createExperience = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getExperience = catchAsync(async (req: Request, res: Response) => {
+  const result = await experienceServices.getExperience();
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: 'Experience get successfully',
+    data: result,
+  });
+});
 export const experienceContollers = {
   createExperience,
+  getExperience,
 };

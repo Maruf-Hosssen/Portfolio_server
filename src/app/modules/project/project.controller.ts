@@ -12,6 +12,16 @@ const createProject = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getProject = catchAsync(async (req: Request, res: Response) => {
+  const result = await projectServices.getProject();
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: 'Project get successfully',
+    data: result,
+  });
+});
 export const projectContollers = {
   createProject,
+  getProject,
 };

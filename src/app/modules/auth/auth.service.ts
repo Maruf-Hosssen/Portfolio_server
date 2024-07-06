@@ -5,9 +5,10 @@ import { createToken } from './auth.utils';
 
 //login user
 const loginUser = async (payload: TLoginUser) => {
-  const userwithdetails = await User.findOne({ username: payload?.username });
+  console.log(payload);
+  const userwithdetails = await User.findOne({ email: payload?.email });
 
-  const user = await User.isUserExistsByName(payload.username);
+  const user = await User.isUserExistsByName(payload?.email);
   if (!user) {
     throw new Error('This user is not found !');
   }
@@ -18,7 +19,7 @@ const loginUser = async (payload: TLoginUser) => {
 
   //check the access and refresh tokens
   const jwtPayload = {
-    username: user?.username,
+    email: user?.email,
     password: user?.password,
     role: user?.role,
   };
